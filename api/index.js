@@ -18,7 +18,7 @@ app.use(cors({credentials:true,origin:'http://localhost:3000'}));
 app.use(express.json());
 app.use(cookieParser());
 app.use('/uploads', express.static(__dirname + '/uploads'));
-
+mongoose.set('strictQuery', false);
 mongoose.connect('mongodb+srv://fatima:fatima@cluster0.f7f8yjg.mongodb.net/?retryWrites=true&w=majority');
 
 app.post('/register', async (req,res) => {
