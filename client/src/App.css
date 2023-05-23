@@ -5,10 +5,12 @@ a{
     cursor: pointer;
 }
 body{
-    color: #222;
+    color: #853072;
 }
 img{
     max-width: 100%;
+    border-radius: 30px;
+    border: 4px solid black;
 }
 main{
     padding: 10px;
@@ -32,7 +34,7 @@ header a.logo{
 }
 header nav{
     display:flex;
-    gap: 24px;
+    gap: 24px;  
 }
 
 div.post{
@@ -57,14 +59,14 @@ div.post div.texts a{
 }
 div.post p.info{
     margin:24px 0;
-    color: #888;
+    color: #dbb5dc;
     font-size:1rem;
     font-weight: bold;
     display: flex;
     gap: 10px;
 }
 div.post p.info a.author{
-    color:#333;
+    color:#000000;
 }
 div.post p.summary{
     margin:10px 0;
@@ -80,7 +82,7 @@ input{
     margin-bottom: 5px;
     width: 100%;
     padding: 5px 7px;
-    border: 2px solid #ddd;
+    border: 2px solid #4c0842;
     border-radius: 5px;
     background-color: #fff;
 }
@@ -107,9 +109,10 @@ div.post-page div.image img{
     object-fit: cover;
     object-position: center center;
     width: 100%;
+    border-radius: 20px;
 }
 div.post-page a{
-    color:#333;
+    color:#140856;
     text-decoration: underline;
 }
 div.post-page h1{
@@ -141,7 +144,7 @@ div.edit-row{
     margin-bottom: 20px;
 }
 div.post-page a.edit-btn{
-    background-color: #333;
+    background-color: #12074a;
     display: inline-flex;
     align-items: center;
     gap: 5px;

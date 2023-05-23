@@ -14,17 +14,11 @@ const fs = require('fs');
 const salt = bcrypt.genSaltSync(10);
 const secret = 'asdfe45we45w345wegw345werjktjwertkj';
 
-app.use(cors({ origin: 'https://blogvibes.onrender.com', credentials: true }));
-app.use((req, res, next) => {
-  res.setHeader('Access-Control-Allow-Origin', 'https://blogvibes.onrender.com');
-  res.setHeader('Access-Control-Allow-Credentials', 'true');
-  next();
-});
-
+app.use(cors({credentials:true,origin:'http://localhost:3000'}));
 app.use(express.json());
 app.use(cookieParser());
 app.use('/uploads', express.static(__dirname + '/uploads'));
-mongoose.set('strictQuery', false);
+
 mongoose.connect('mongodb+srv://fatima:fatima@cluster0.f7f8yjg.mongodb.net/?retryWrites=true&w=majority');
 
 app.post('/register', async (req,res) => {
@@ -132,11 +126,6 @@ app.get('/post', async (req,res) => {
       .sort({createdAt: -1})
       .limit(20)
   );
-});
-
-app.delete('/:id', async (req,res) => {
-    await Post.findByIdAndDelete(req.params.id);
-    res.send(Post);
 });
 
 app.get('/post/:id', async (req, res) => {
