@@ -14,7 +14,13 @@ const fs = require('fs');
 const salt = bcrypt.genSaltSync(10);
 const secret = 'asdfe45we45w345wegw345werjktjwertkj';
 
-app.use(cors({credentials:true,origin:['https://blogvibes-backend.onrender.com','https://blogvibes-backend.onrender.com/profile']}));
+app.use(cors({ origin: 'https://blogvibes.onrender.com', credentials: true }));
+app.use((req, res, next) => {
+  res.setHeader('Access-Control-Allow-Origin', 'https://blogvibes.onrender.com');
+  res.setHeader('Access-Control-Allow-Credentials', 'true');
+  next();
+});
+
 app.use(express.json());
 app.use(cookieParser());
 app.use('/uploads', express.static(__dirname + '/uploads'));
